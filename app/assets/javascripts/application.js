@@ -14,3 +14,30 @@
 //= require jquery_ujs
 //= require d3
 //= require_tree .
+
+function greyOut(){
+  var button = document.getElementById("update_course_button");
+  button.disabled = true;
+  document.getElementById("edit_course_1").submit();
+}
+
+function hideSection(){
+  if (document.getElementById("grade_list")!= "null"){
+    var section = document.getElementById("grade_list");
+    var last = section.lastElementChild;
+    last.style.display = 'none';
+  }
+}
+
+function addRow(){
+  if (document.getElementById("grade_list")!= "null"){
+    var section = document.getElementById("grade_list");
+    var last = section.lastElementChild;
+    last.style.display = 'block';
+  }
+}
+
+function deleteRow(button){
+  var parentDiv = button.parentNode.parentNode.parentNode;
+  parentDiv.style.display = "none";
+}
