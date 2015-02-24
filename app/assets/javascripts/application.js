@@ -14,11 +14,19 @@
 //= require jquery_ujs
 //= require d3
 //= require_tree .
+$(function() {
+  hideSection();
+  $("#add-row").on("click", addRow);
+  $("#update_course_button").on("click", greyOut);
+  $(".delete-association").on("click", deleteRow);
+});
 
 function greyOut(){
-  var button = document.getElementById("update_course_button");
-  button.disabled = true;
-  document.getElementById("edit_course_1").submit();
+  // var button = document.getElementById("update_course_button");
+  // setTimeout(function(){button.disabled = true;}, 1);
+
+  $("#update_course_button").attr("disabled","disabled");
+  $(".edit_course").submit();
 }
 
 function hideSection(){
@@ -37,7 +45,6 @@ function addRow(){
   }
 }
 
-function deleteRow(button){
-  var parentDiv = button.parentNode.parentNode.parentNode;
-  parentDiv.style.display = "none";
+function deleteRow(event){
+  $(event.target).closest(".association").css("display", "none");
 }
