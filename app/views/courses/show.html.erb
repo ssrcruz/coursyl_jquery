@@ -194,6 +194,11 @@
         <% @course.assignments.each do |a| %>
           <tr>
             <td><%= date_abbreviation(a.due_at) %></td>
+            <td><span class="ui-icon ui-icon-calendar"></span>
+            <a href="#" class="img-link">
+              <span class="ui-icon ui-icon-calendar" style="display:inline-block;"></span>
+              <span class="link_text">Change date</span> 
+            </a></td>
             <td><%= time_abbreviation(a.due_at) %></td>
             <td><%= a.name %></td>
             <td><span class="label <%= a.status(current_user).label_class %>">

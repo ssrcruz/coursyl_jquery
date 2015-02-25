@@ -48,3 +48,8 @@ function addRow(){
 function deleteRow(event){
   $(event.target).closest(".association").css("display", "none");
 }
+
+$(".MySelector").hover(function() {
+    $(this).removeClass("ui-icon-calendar");
+
+});
